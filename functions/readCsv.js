@@ -1,16 +1,13 @@
-const fs = require("fs");
+const fs = require('fs');
+const readline = require('readline');
 
-const filePath = process.argv[2];
+async function* readCSVRows(filePath, separator = ',') {
+  const fileStream = fs.createReadStream(filePath);
+  const rl = readline.createInterface({ input: fileStream });
 
-if (!filePath) {
-    console.error("Usage: node readCsv.js <filename.csv>");
-    process.exit(1);
+  for await (const line of rl) {
+    yield line.split(separator).map(cell => cell.trim());
+  }
 }
 
-fs.readFile(filePath, "utf8", (err, data) => {
-    if (err) {
-        console.error("Error reading file:", err);
-        return;
-    }
-    console.log(data);
-});
+module.exports = { readCSVRows };
