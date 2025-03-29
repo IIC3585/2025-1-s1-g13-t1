@@ -1,15 +1,32 @@
 const path = require('path');
+const _ = require('lodash');
 const { read, write, insertRow, insertColumn, swapColumns, deleteRow, deleteColumn } = require('./utils');
 
 const filePath = path.join(__dirname, 'test.csv');
+const outputFilePath = path.join(__dirname, 'test_output.csv');
 let csvData = read(filePath);
-const rowToInsert = ["Martin", "Jara", "martinjf@uc.cl"];
-const columnToInsert = ["1", "2", "3", "4"];
+const rowToInsert = ['99','John','34','Las Vegas','Nevada'];
+const columnToInsert = [
+    "Software Engineer",
+    "Data Scientist",
+    "Graphic Designer",
+    "Project Manager",
+    "Product Designer",
+    "HR Manager",
+    "Marketing Specialist",
+    "UX/UI Designer",
+    "Content Writer",
+    "Web Developer",
+    "Architect"
+  ]
+  
 
-csvData = insertRow(csvData, 2, rowToInsert);
-csvData = insertColumn(csvData, 3, columnToInsert);
-csvData = swapColumns(csvData, 1, 3);
-csvData = deleteRow(csvData, 1);
-csvData = deleteColumn(csvData, 2);
+csvData = _.chain(csvData)
+  .thru(data => insertRow(data, 2, rowToInsert))
+  .thru(data => insertColumn(data, 3, columnToInsert))
+  .thru(data => swapColumns(data, 1, 3))
+  .thru(data => deleteRow(data, 1))
+  .thru(data => deleteColumn(data, 2))
+  .value();
 
-write(filePath, csvData);
+write(outputFilePath, csvData);
