@@ -1,5 +1,6 @@
 const path = require('path');
 const _ = require('lodash');
+const { rowsToColumns, columnsToRows } = require('./csvTransforms');
 const { read, write, insertRow, insertColumn, swapColumns, deleteRow, deleteColumn} = require('./utils');
 const { toHTMLTable } = require('./toHtmlTable');
 
@@ -23,13 +24,13 @@ const columnToInsert = [
     "Architect"
   ]
   
-
 csvData = _.chain(csvData)
   .thru(data => insertRow(data, 2, rowToInsert))
   .thru(data => insertColumn(data, 3, columnToInsert))
   .thru(data => swapColumns(data, 1, 3))
   .thru(data => deleteRow(data, 1))
   .thru(data => deleteColumn(data, 2))
+  .thru(data => rowsToColumns(data))
   .value();
 
 write(outputFilePath, csvData);

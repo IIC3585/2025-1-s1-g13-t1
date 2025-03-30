@@ -51,6 +51,5 @@ module.exports = {
     insertColumn,
     swapColumns,
     deleteRow,
-    deleteColumn,
-    toHTMLTable
+    deleteColumn
 };

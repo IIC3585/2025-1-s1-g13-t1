@@ -1,10 +1,5 @@
-1,Software Engineer,Jeremy,Austin,Texas
-99,Graphic Designer,John,Las Vegas,Nevada
-3,Project Manager,Sarah,Los Angeles,California
-4,Product Designer,David,Chicago,Illinois
-5,HR Manager,Emma,San Francisco,California
-6,Marketing Specialist,Liam,Boston,Massachusetts
-7,UX/UI Designer,Olivia,Miami,Florida
-8,Content Writer,James,Seattle,Washington
-9,Web Developer,Isabella,Dallas,Texas
-10,Architect,Lucas,Denver,Colorado
+1,99,3,4,5,6,7,8,9,10
+Software Engineer,Graphic Designer,Project Manager,Product Designer,HR Manager,Marketing Specialist,UX/UI Designer,Content Writer,Web Developer,Architect
+Jeremy,John,Sarah,David,Emma,Liam,Olivia,James,Isabella,Lucas
+Austin,Las Vegas,Los Angeles,Chicago,San Francisco,Boston,Miami,Seattle,Dallas,Denver
+Texas,Nevada,California,Illinois,California,Massachusetts,Florida,Washington,Texas,Colorado
