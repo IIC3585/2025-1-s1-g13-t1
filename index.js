@@ -1,11 +1,13 @@
 const path = require('path');
 const _ = require('lodash');
-const { read, write, insertRow, insertColumn, swapColumns, deleteRow, deleteColumn, toHTMLTable } = require('./utils');
+const { read, write, insertRow, insertColumn, swapColumns, deleteRow, deleteColumn} = require('./utils');
+const { toHTMLTable } = require('./toHtmlTable');
 
 const filePath = path.join(__dirname, 'test.csv');
 const outputFilePath = path.join(__dirname, 'test_output.csv');
 const htmlTableFile = path.join(__dirname, 'test.html');
 let csvData = read(filePath);
+
 const rowToInsert = ['99','John','34','Las Vegas','Nevada'];
 const columnToInsert = [
     "Software Engineer",
@@ -30,6 +32,6 @@ csvData = _.chain(csvData)
   .thru(data => deleteColumn(data, 2))
   .value();
 
-  write(outputFilePath, csvData);
-
-  toHTMLTable(csvData, htmlTableFile);
+console.log(csvData);
+write(outputFilePath, csvData);
+toHTMLTable(csvData, htmlTableFile);
