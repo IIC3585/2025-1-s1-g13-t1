@@ -32,6 +32,5 @@ csvData = _.chain(csvData)
   .thru(data => deleteColumn(data, 2))
   .value();
 
-console.log(csvData);
 write(outputFilePath, csvData);
 toHTMLTable(csvData, htmlTableFile);

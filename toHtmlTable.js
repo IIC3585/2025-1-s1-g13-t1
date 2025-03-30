@@ -3,13 +3,11 @@ const fs = require('fs');
 
 const createRow = _.flow(
     (row) => _.map(row, (dataField) => `\t\t<td>${dataField}</td>`),
-    
     (dataFields) => `\t<tr>\n${_.join(dataFields, '\n')}\n\t</tr>`
 )
 
 const createTable = (csvData) => {
     const rows = _.map(csvData, createRow).join('\n');
-    
     return `<table>\n${rows}\n</table>`;
 }
 

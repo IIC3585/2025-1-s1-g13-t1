@@ -44,13 +44,6 @@ const deleteColumn = (csvData, index) => {
     return csvData.map(row => row.filter((_, i) => i !== index));
 }
 
-const toHTMLTable = (csvData, filePath) => {
-    const table = csvData.map(row => `\t<tr>${row.map(dataField => `\n\t\t<td>${dataField}</td>`).join('')}\n\t</tr>\n`).join('');
-    const htmlTable = `<table>\n${table}\n</table>`
-    fs.writeFileSync(filePath, htmlTable);
-    return
-}
-
 module.exports = {
     read,
     write,
