@@ -36,10 +36,20 @@ const swapColumns = (csvData, index1, index2) => {
     });
 }
 
+const deleteRow = (csvData, index) => {
+    return csvData.filter((_, i) => i !== index);
+};
+
+const deleteColumn = (csvData, index) => {
+    return csvData.map(row => row.filter((_, i) => i !== index));
+}
+
 module.exports = {
     read,
     write,
     insertRow,
     insertColumn,
-    swapColumns
+    swapColumns,
+    deleteRow,
+    deleteColumn
 };
