@@ -1,15 +1,26 @@
+## Basic information
+This project is a simple CSV file manipulator that allows you to perform various operations on CSV files, such as inserting and deleting rows and columns, swapping columns, transposing data, and converting data to HTML tables. It is built using TypeScript in Vite.
+
+The app is deployed on GitHub Pages and can be accessed at [https://iic3585.github.io/2025-1-s1-g13-t1/](https://iic3585.github.io/2025-1-s1-g13-t1/).
+
 ## Usage
 
-1. Install Lodash:
+1. Install dependencies:
    ```bash
-   npm install lodash
+   npm install
    ```
 
-1. Run chain of functions:
+2. Run the development server:
    ```bash
-   node index.js
+   npm run dev
    ```
-## Functions
+
+3. Deploy the project:
+   ```bash
+   npm run deploy
+   ```
+
+## Functions in `src/main.ts`
 
 This project contains functions to transform CSV files using a functional approach with ES6 and the Lodash library.
 
