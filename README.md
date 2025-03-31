@@ -140,3 +140,9 @@ Deletes a row of a 2x2 given it's index by transforming a `.csv` file into a 2x2
 **Return:**
 
 - `Array<Array<string>>`: New matrix without the deleted column.
+
+
+## Authors
+- Martín Jara
+- Benjamín Pedraza
+- Benjamín Díaz
