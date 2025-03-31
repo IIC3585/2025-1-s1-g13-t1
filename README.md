@@ -17,6 +17,8 @@ The app is deployed on GitHub Pages and can be accessed at [https://iic3585.gith
 
 3. Deploy the project:
    ```bash
+   npm run build
+
    npm run deploy
    ```
 
