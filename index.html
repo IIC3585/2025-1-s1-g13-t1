@@ -1,15 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>CSV Transformer</title>
-    <script type="module" crossorigin src="/2025-1-s1-g13-t1/assets/index-BHNSMdkf.js"></script>
-  </head>
-  <body>
-      <h1>CSV Transformer</h1>
-      <input type="file" id="csvFile" accept=".csv">
-      <button id="processCSV">Procesar CSV</button>
-      <table id="csvTable" border="1"></table>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>T1 - Grupo 13 - S1</title>
+  <script type="module" crossorigin src="/2025-1-s1-g13-t1/assets/index-DJqFP4c9.js"></script>
+</head>
+<body>
+    <div class="max-w-9xl p-6 grid grid-cols-2 gap-8">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-700 mb-4">Trabajo 1: JavaScript Funcional [CSV]</h1>
+            <div class="mb-10">
+                <input type="file" id="csvFile" accept=".csv" class="border p-2 w-full rounded">
+                <button id="processCSV" class="mt-2 w-full bg-blue-500 text-white p-2 rounded">Mostrar</button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="index1" class="block text-gray-600">Índice columna 1:</label>
+                    <input type="number" id="index1" class="border p-2 w-full rounded" placeholder="Index">
+                </div>
+                <div>
+                    <label for="index2" class="block text-gray-600">Índice columna 2:</label>
+                    <input type="number" id="index2" class="border p-2 w-full rounded" placeholder="Index">
+                </div>
+            </div>
+            <button id="swapColumns" class="w-full bg-blue-500 text-white p-2 rounded">Intercambiar Columnas</button>
+
+            <div class="grid grid-cols-2 gap-4 mt-10">
+                <button id="rowsToColumns" class="bg-green-500 text-white p-2 rounded">Filas a Columnas</button>
+                <button id="columnsToRows" class="bg-green-500 text-white p-2 rounded">Columnas a Filas</button>
+            </div>
+
+            <div class="mt-10">
+                <label for="rowIndex" class="block text-gray-600">Índice de fila a eliminar:</label>
+                <input type="number" id="rowIndex" class="border p-2 w-full rounded" placeholder="Index">
+                <button id="deleteRow" class="mt-2 w-full bg-red-500 text-white p-2 rounded">Eliminar Fila</button>
+            </div>
+
+            <div class="mt-4">
+                <label for="columnIndex" class="block text-gray-600">Índice de columna a eliminar:</label>
+                <input type="number" id="columnIndex" class="border p-2 w-full rounded" placeholder="Index">
+                <button id="deleteColumn" class="mt-2 w-full bg-red-500 text-white p-2 rounded">Eliminar Columna</button>
+            </div>
+
+            <div class="mt-4">
+                <label for="rowInput" class="block text-gray-600">Datos de la fila (separados por comas):</label>
+                <input type="text" id="rowInput" class="border p-2 w-full rounded" placeholder="a,b,c">
+                <button id="insertRow" class="mt-2 w-full bg-yellow-500 text-white p-2 rounded">Insertar Fila</button>
+            </div>
+
+            <div class="mt-4">
+                <label for="columnInput" class="block text-gray-600">Datos de la columna (separados por comas):</label>
+                <input type="text" id="columnInput" class="border p-2 w-full rounded" placeholder="a,b,c">
+                <button id="insertColumn" class="mt-2 w-full bg-yellow-500 text-white p-2 rounded">Insertar Columna</button>
+            </div>
+
+            <div class="mt-4">
+                <label for="insertIndex" class="block text-gray-600">Índice donde insertar:</label>
+                <input type="number" id="insertIndex" class="border p-2 w-full rounded" placeholder="Index">
+            </div>
+
+            <button id="toggleHtml" class="mt-6 w-full bg-gray-700 text-white p-2 rounded">Mostrar HTML</button>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg border shadow">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">CSV</h2>
+            <div id="csvTable" class="border border-gray-300 rounded p-4 bg-white shadow overflow-auto h-120"></div>
+            <pre id="htmlOutput" class="mt-4 p-4 border border-gray-300 bg-gray-100 rounded hidden overflow-auto h-120"></pre>
+        </div>
+    </div>
+
+    <footer class="bg-gray-700 text-white text-center py-4 mt-4 bottom-0 w-full">
+      <p>Desarrollado por Martín Jara, Benjamín Pedraza y Benjamín Díaz</p>
+    </footer>
+
+</body>
 </html>
